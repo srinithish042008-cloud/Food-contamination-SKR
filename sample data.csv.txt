@@ -1,0 +1,5 @@
+Food,Storage,Hygiene,Contamination
+Milk,Cold,Clean,Low
+Meat,Room Temperature,Poor,Very High
+Vegetables,Hot,Poor,High
+Milk,Room Temperature,Clean,Medium
