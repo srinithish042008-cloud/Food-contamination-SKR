@@ -1,0 +1,23 @@
+import streamlit as st
+from utils.simulation import simulate_contamination
+import pandas as pd
+
+st.set_page_config(page_title="Food Contamination Lab", layout="centered")
+
+st.title("🧪 Food Contamination Virtual Lab")
+
+# Inputs
+food = st.selectbox("Select Food Sample", ["Milk", "Meat", "Vegetables"])
+storage = st.selectbox("Storage Condition", ["Cold", "Room Temperature", "Hot"])
+hygiene = st.selectbox("Hygiene Level", ["Clean", "Poor"])
+
+if st.button("Run Experiment"):
+    result, bacteria, data = simulate_contamination(food, storage, hygiene)
+
+    st.subheader("🔬 Results")
+    st.write(f"**Contamination Level:** {result}")
+    st.write(f"**Microbial Presence:** {bacteria}")
+
+    st.subheader("📊 Growth Simulation")
+    df = pd.DataFrame(data, columns=["Time", "Bacterial Growth"])
+    st.line_chart(df.set_index("Time"))
