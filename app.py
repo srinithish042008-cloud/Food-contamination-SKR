@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.simulation import simulate_contamination
+from utils import simulate_contamination
 import pandas as pd
 
 st.set_page_config(page_title="Food Contamination Lab", layout="centered")
