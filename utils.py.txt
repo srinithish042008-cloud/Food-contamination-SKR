@@ -1,0 +1,28 @@
+import random
+
+def simulate_contamination(food, storage, hygiene):
+    contamination = "Low"
+
+    if storage in ["Room Temperature", "Hot"]:
+        contamination = "Medium"
+
+    if hygiene == "Poor":
+        contamination = "High"
+
+    if food == "Meat" and storage != "Cold":
+        contamination = "Very High"
+
+    if contamination in ["High", "Very High"]:
+        bacteria = "E. coli, Salmonella"
+    else:
+        bacteria = "Minimal growth"
+
+    # Simulated growth data
+    data = []
+    growth = 10
+
+    for t in range(1, 11):
+        growth += random.randint(5, 15)
+        data.append((t, growth))
+
+    return contamination, bacteria, data
