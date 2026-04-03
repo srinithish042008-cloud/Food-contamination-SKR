@@ -1,0 +1,15 @@
+mport streamlit as st
+
+st.set_page_config(page_title="Food Contamination Virtual Lab")
+
+st.title("🧪 Food Contamination Virtual Lab")
+
+st.write("""
+Welcome to the virtual lab.
+
+Use the navigation menu to explore:
+- Aim & Theory
+- Experiment
+- Quiz
+- Feedback
+""")
