@@ -1,0 +1,22 @@
+import streamlit as st
+
+st.title("🧫 Experiment")
+
+food = st.selectbox("Food Sample", ["Milk", "Meat", "Vegetables"])
+storage = st.selectbox("Storage", ["Cold", "Room Temperature", "Hot"])
+hygiene = st.selectbox("Hygiene", ["Clean", "Moderate", "Poor"])
+
+if st.button("Run Experiment"):
+    contamination = "Low"
+    microbial = "Minimal growth"
+
+    if storage == "Room Temperature" or hygiene == "Moderate":
+        contamination = "Medium"
+        microbial = "Moderate growth"
+
+    if storage == "Hot" or hygiene == "Poor":
+        contamination = "High"
+        microbial = "Rapid growth"
+
+    st.write(f"Contamination Level: {contamination}")
+    st.write(f"Microbial Presence: {microbial}")
